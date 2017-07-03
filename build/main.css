@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 500px;
+  clear: both;
+  padding: 20px;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}
+
+.todolist h3 {
+  text-align: center;
+}
+
+.todolist button {
+  margin-right: 10px;
+}
+
+.todolist li {
+  list-style-type: none;
+  text-align: left;
+  margin-left: 80px;
+}
