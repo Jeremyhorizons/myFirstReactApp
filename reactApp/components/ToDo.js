@@ -10,14 +10,14 @@ class ToDo extends React.Component {
     //     return {'text-decoration': 'line-through'};
     //   }
     // }
-
-    var isCompleted = function(task) {
+    console.log(this.props)
+    var isCompleted = (task) => {
       if (task.completed) {
-        return <li><button type="button">X</button><strike>{task.taskText}</strike></li>
+        return <li><button onClick={this.props.xClick} type="button" >X</button><strike>{task.taskText}</strike></li>
       } else {
-        return <li><button type="button">X</button>{task.taskText}</li>
+        return <li><button onClick={this.props.xClick} type="button" >X</button>{task.taskText}</li>
       }
-    }
+    };
 
     return (
         isCompleted(this.props.task)
