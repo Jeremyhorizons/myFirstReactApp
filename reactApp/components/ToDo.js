@@ -20,9 +20,7 @@ class ToDo extends React.Component {
     }
 
     return (
-      <ul>
-        {isCompleted(this.props.task)}
-      </ul>
+        isCompleted(this.props.task)
     )
   }
 }

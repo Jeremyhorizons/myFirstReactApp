@@ -2,6 +2,43 @@ import React from 'react'
 import ToDoList from './ToDoList'
 import InputLine from './InputLine'
 
+class ToDoApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: []
+    }
+  }
+
+  componentDidMount() {
+    console.log('I have been triggered')
+    this.setState ({
+      todos:todos
+    })
+  }
+
+  addTodo(task) {
+    
+    var dummyData = this.state.todos.slice();
+
+    dummyData.push({taskText:task, completed:false});
+    return (
+      this.setState({
+        todos:dummyData
+      })
+    )
+  }
+
+  render(){
+    return (
+      <div className="container">
+        <InputLine submit={task => this.addTodo(task)} />
+        <ToDoList todos={this.state.todos} />
+      </div>
+    )
+  }
+}
+
 var todos = [
   {
     taskText: "Jeremy Task 1",
@@ -16,31 +53,5 @@ var todos = [
     completed: false
   }
 ]
-
-class ToDoApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: []
-    }
-  }
-
-  componentDidMount() {
-    this.setState ({
-      todos:todos
-    })
-  }
-
-  render(){
-    return (
-      <div className="container">
-        <InputLine  />
-        <ToDoList todos={this.state.todos} />
-      </div>
-    )
-  }
-}
-
-
 
 export default ToDoApp;
